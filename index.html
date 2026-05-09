@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>New Look Salon – Ladies Beauty Parlour in Ejipura, Bengaluru</title>
+<meta name="description" content="New Look Salon is a trusted ladies beauty parlour in Ejipura, Bengaluru offering hair smoothing, keratin treatment, waxing, facials, hair spa, threading and more at affordable prices."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --rose: #c9856a;
+    --rose-light: #e8b4a0;
+    --rose-pale: #f9ede8;
+    --blush: #f5ddd4;
+    --mocha: #5c3d2e;
+    --cream: #fdf6f0;
+    --dark: #1a1008;
+    --text: #3a2a1e;
+    --muted: #8a7060;
+    --white: #ffffff;
+    --gold: #b89a6a;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* ── SCROLLBAR ─────────────────── */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--blush); }
+  ::-webkit-scrollbar-thumb { background: var(--rose); border-radius: 3px; }
+
+  /* ── NAV ───────────────────────── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.2rem 4rem;
+    background: rgba(253, 246, 240, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(201,133,106,0.15);
+    transition: box-shadow .3s;
+  }
+  nav.scrolled { box-shadow: 0 4px 30px rgba(92,61,46,.08); }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: var(--mocha);
+    letter-spacing: .04em;
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--rose); }
+
+  .nav-links {
+    display: flex; gap: 2.4rem; list-style: none;
+  }
+  .nav-links a {
+    text-decoration: none;
+    color: var(--text);
+    font-size: .82rem;
+    font-weight: 500;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 3px;
+    transition: color .3s;
+  }
+  .nav-links a::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0;
+    width: 0; height: 1.5px;
+    background: var(--rose);
+    transition: width .3s;
+  }
+  .nav-links a:hover { color: var(--rose); }
+  .nav-links a:hover::after { width: 100%; }
+
+  .nav-cta {
+    background: var(--rose);
+    color: var(--white) !important;
+    padding: .65rem 1.6rem;
+    border-radius: 50px;
+    font-size: .8rem !important;
+    font-weight: 600 !important;
+    letter-spacing: .1em !important;
+    text-transform: uppercase !important;
+    text-decoration: none;
+    transition: background .3s, transform .2s;
+  }
+  .nav-cta:hover { background: var(--mocha); transform: translateY(-1px); }
+  .nav-cta::after { display: none !important; }
+
+  /* hamburger */
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+  .hamburger span { display: block; width: 26px; height: 2px; background: var(--mocha); transition: .3s; }
+
+  /* ── HERO ──────────────────────── */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 80px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5rem 4rem 5rem 5rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    background: var(--blush);
+    border: 1px solid var(--rose-light);
+    color: var(--rose);
+    font-size: .72rem;
+    font-weight: 600;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    padding: .4rem 1rem;
+    border-radius: 50px;
+    width: fit-content;
+    margin-bottom: 1.8rem;
+    animation: fadeUp .6s ease both;
+  }
+  .hero-badge::before { content: '★'; font-size: .7rem; }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 5vw, 5rem);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--dark);
+    margin-bottom: 1.5rem;
+    animation: fadeUp .7s .1s ease both;
+  }
+  .hero h1 em { font-style: italic; color: var(--rose); }
+  .hero h1 strong { font-weight: 600; }
+
+  .hero p {
+    font-size: 1rem;
+    color: var(--muted);
+    line-height: 1.8;
+    max-width: 400px;
+    margin-bottom: 2.5rem;
+    animation: fadeUp .7s .2s ease both;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    animation: fadeUp .7s .3s ease both;
+  }
+
+  .btn-primary {
+    background: var(--rose);
+    color: var(--white);
+    padding: .9rem 2.2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: .85rem;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    transition: all .3s;
+    box-shadow: 0 6px 24px rgba(201,133,106,.35);
+  }
+  .btn-primary:hover { background: var(--mocha); transform: translateY(-2px); box-shadow: 0 10px 30px rgba(92,61,46,.25); }
+
+  .btn-outline {
+    border: 1.5px solid var(--rose);
+    color: var(--rose);
+    padding: .9rem 2.2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: .85rem;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    transition: all .3s;
+  }
+  .btn-outline:hover { background: var(--rose); color: var(--white); transform: translateY(-2px); }
+
+  .hero-stats {
+    display: flex;
+    gap: 2.5rem;
+    margin-top: 3rem;
+    animation: fadeUp .7s .4s ease both;
+  }
+  .stat-item {}
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: var(--mocha);
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: .75rem;
+    color: var(--muted);
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    margin-top: .2rem;
+  }
+
+  .hero-right {
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-img-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    height: 100%;
+    gap: 4px;
+  }
+  .hero-img-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .6s ease;
+  }
+  .hero-img-grid img:hover { transform: scale(1.04); }
+  .hero-img-grid .img-main {
+    grid-row: span 2;
+  }
+  .hero-overlay {
+    position: absolute;
+    bottom: 2rem;
+    left: -2rem;
+    background: var(--white);
+    padding: 1.2rem 1.6rem;
+    border-radius: 12px;
+    box-shadow: 0 12px 40px rgba(0,0,0,.12);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    animation: floatCard 3s ease-in-out infinite;
+    z-index: 5;
+  }
+  .hero-overlay .stars { color: #f4a826; font-size: 1rem; letter-spacing: 2px; }
+  .hero-overlay .ov-text { font-size: .8rem; color: var(--mocha); font-weight: 600; }
+  .hero-overlay .ov-sub { font-size: .7rem; color: var(--muted); }
+
+  @keyframes floatCard {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  /* ── TICKER ─────────────────────── */
+  .ticker-wrap {
+    background: var(--mocha);
+    color: var(--rose-light);
+    padding: .85rem 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .ticker-track {
+    display: inline-block;
+    animation: ticker 28s linear infinite;
+  }
+  .ticker-track span {
+    display: inline-block;
+    padding: 0 2.5rem;
+    font-size: .78rem;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .ticker-track span::after {
+    content: '✦';
+    margin-left: 2.5rem;
+    color: var(--gold);
+  }
+  @keyframes ticker {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  /* ── SECTION BASE ───────────────── */
+  section { padding: 6rem 4rem; }
+  .section-label {
+    display: inline-block;
+    font-size: .72rem;
+    font-weight: 600;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--rose);
+    margin-bottom: .8rem;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3.5vw, 3.2rem);
+    font-weight: 300;
+    color: var(--dark);
+    line-height: 1.2;
+  }
+  .section-title em { font-style: italic; color: var(--rose); }
+  .section-sub {
+    font-size: .95rem;
+    color: var(--muted);
+    line-height: 1.8;
+    max-width: 520px;
+    margin-top: .8rem;
+  }
+
+  /* ── SERVICES ───────────────────── */
+  #services {
+    background: var(--white);
+  }
+  .services-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 3.5rem;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    gap: 1.5rem;
+  }
+  .service-card {
+    background: var(--cream);
+    border: 1px solid rgba(201,133,106,.12);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all .35s;
+    cursor: pointer;
+    position: relative;
+  }
+  .service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(92,61,46,.12);
+    border-color: var(--rose-light);
+  }
+  .service-card-img {
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+  }
+  .service-card-img img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform .5s;
+  }
+  .service-card:hover .service-card-img img { transform: scale(1.08); }
+  .service-card-img::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 50%, rgba(92,61,46,.3));
+  }
+  .service-card-body {
+    padding: 1.2rem;
+  }
+  .service-card-body h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--mocha);
+    margin-bottom: .3rem;
+  }
+  .service-card-body p {
+    font-size: .78rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+  .service-tag {
+    position: absolute;
+    top: .8rem; left: .8rem;
+    background: var(--rose);
+    color: var(--white);
+    font-size: .65rem;
+    font-weight: 600;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    padding: .25rem .7rem;
+    border-radius: 50px;
+    z-index: 2;
+  }
+
+  /* ── ABOUT ──────────────────────── */
+  #about {
+    background: var(--cream);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+  .about-imgs {
+    position: relative;
+    height: 550px;
+  }
+  .about-img-main {
+    position: absolute;
+    top: 0; left: 0;
+    width: 75%; height: 85%;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(92,61,46,.18);
+  }
+  .about-img-accent {
+    position: absolute;
+    bottom: 0; right: 0;
+    width: 55%; height: 55%;
+    object-fit: cover;
+    border-radius: 16px;
+    border: 6px solid var(--cream);
+    box-shadow: 0 12px 40px rgba(92,61,46,.15);
+  }
+  .about-badge-float {
+    position: absolute;
+    top: 50%; left: 60%;
+    transform: translate(-50%, -50%);
+    background: var(--rose);
+    color: var(--white);
+    width: 100px; height: 100px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 24px rgba(201,133,106,.4);
+    font-family: 'Cormorant Garamond', serif;
+    z-index: 5;
+  }
+  .about-badge-float .num {
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 1;
+  }
+  .about-badge-float .txt { font-size: .6rem; letter-spacing: .1em; text-align: center; text-transform: uppercase; line-height: 1.3; }
+
+  .about-content {}
+  .about-content .section-title { margin-bottom: 1.2rem; }
+  .about-content p {
+    font-size: .95rem;
+    color: var(--muted);
+    line-height: 1.9;
+    margin-bottom: 1rem;
+  }
+  .about-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: .8rem;
+    margin: 2rem 0;
+  }
+  .feature-item {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    font-size: .83rem;
+    color: var(--text);
+    font-weight: 500;
+  }
+  .feature-item::before {
+    content: '✦';
+    color: var(--rose);
+    font-size: .7rem;
+    flex-shrink: 0;
+  }
+
+  /* ── TESTIMONIALS ───────────────── */
+  #testimonials { background: var(--mocha); padding: 6rem 4rem; }
+  #testimonials .section-label { color: var(--rose-light); }
+  #testimonials .section-title { color: var(--white); }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3.5rem;
+  }
+  .testimonial-card {
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 16px;
+    padding: 2rem;
+    transition: all .3s;
+    position: relative;
+    overflow: hidden;
+  }
+  .testimonial-card::before {
+    content: '"';
+    position: absolute;
+    top: -.5rem; right: 1.2rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 8rem;
+    color: rgba(201,133,106,.15);
+    line-height: 1;
+    pointer-events: none;
+  }
+  .testimonial-card:hover {
+    background: rgba(255,255,255,.1);
+    transform: translateY(-4px);
+  }
+  .tc-stars { color: #f4a826; font-size: .9rem; letter-spacing: 3px; margin-bottom: 1rem; }
+  .tc-text {
+    font-size: .9rem;
+    color: rgba(255,255,255,.8);
+    line-height: 1.8;
+    margin-bottom: 1.4rem;
+    font-style: italic;
+  }
+  .tc-author {
+    font-size: .78rem;
+    color: var(--rose-light);
+    font-weight: 600;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+
+  /* ── GALLERY ────────────────────── */
+  #gallery { background: var(--white); }
+  .gallery-header { text-align: center; margin-bottom: 3.5rem; }
+  .gallery-header .section-sub { margin: .8rem auto 0; }
+  .gallery-mosaic {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 240px);
+    gap: 8px;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  .gallery-mosaic .g-item { overflow: hidden; position: relative; }
+  .gallery-mosaic .g-item img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform .6s;
+    display: block;
+  }
+  .gallery-mosaic .g-item:hover img { transform: scale(1.08); }
+  .gallery-mosaic .g-item.wide { grid-column: span 2; }
+  .gallery-mosaic .g-item.tall { grid-row: span 2; }
+  .gallery-mosaic .g-item::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(201,133,106,.3), transparent);
+    opacity: 0;
+    transition: opacity .4s;
+  }
+  .gallery-mosaic .g-item:hover::after { opacity: 1; }
+
+  /* ── WHY US ─────────────────────── */
+  #why {
+    background: var(--rose-pale);
+    text-align: center;
+  }
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-top: 3.5rem;
+  }
+  .why-card {
+    padding: 2.5rem 1.5rem;
+    background: var(--white);
+    border-radius: 20px;
+    transition: all .35s;
+  }
+  .why-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(92,61,46,.1); }
+  .why-icon {
+    font-size: 2rem;
+    margin-bottom: 1.2rem;
+    display: block;
+  }
+  .why-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    color: var(--mocha);
+    margin-bottom: .6rem;
+  }
+  .why-card p {
+    font-size: .82rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  /* ── SOCIAL ─────────────────────── */
+  #social { background: var(--cream); text-align: center; }
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+    flex-wrap: wrap;
+  }
+  .social-btn {
+    display: flex;
+    align-items: center;
+    gap: .7rem;
+    padding: .9rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: .83rem;
+    font-weight: 600;
+    letter-spacing: .06em;
+    transition: all .3s;
+    border: 2px solid transparent;
+  }
+  .social-btn svg { width: 20px; height: 20px; fill: currentColor; }
+  .social-btn.instagram { background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045); color: var(--white); }
+  .social-btn.instagram:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(253,29,29,.3); }
+  .social-btn.whatsapp { background: #25d366; color: var(--white); }
+  .social-btn.whatsapp:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(37,211,102,.3); }
+  .social-btn.maps { background: var(--mocha); color: var(--white); }
+  .social-btn.maps:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(92,61,46,.3); }
+  .social-btn.phone { background: var(--rose); color: var(--white); }
+  .social-btn.phone:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(201,133,106,.4); }
+
+  /* ── CONTACT ────────────────────── */
+  #contact {
+    background: var(--white);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+  .contact-info {}
+  .contact-info .section-title { margin-bottom: 1rem; }
+  .contact-info p { font-size: .95rem; color: var(--muted); line-height: 1.8; margin-bottom: 2rem; }
+  .contact-detail {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.4rem;
+  }
+  .contact-icon {
+    width: 44px; height: 44px;
+    background: var(--blush);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    color: var(--rose);
+  }
+  .contact-detail-text {}
+  .contact-detail-text strong { display: block; font-size: .82rem; color: var(--mocha); font-weight: 600; letter-spacing: .06em; text-transform: uppercase; margin-bottom: .2rem; }
+  .contact-detail-text span { font-size: .9rem; color: var(--text); }
+
+  .contact-map {
+    border-radius: 20px;
+    overflow: hidden;
+    height: 440px;
+    background: var(--blush);
+    box-shadow: 0 12px 40px rgba(92,61,46,.1);
+  }
+  .contact-map iframe {
+    width: 100%; height: 100%;
+    border: 0;
+    display: block;
+  }
+
+  /* ── BOOKING STRIP ──────────────── */
+  .booking-strip {
+    background: linear-gradient(135deg, var(--rose) 0%, #b56a50 100%);
+    padding: 4rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .booking-strip::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.06);
+  }
+  .booking-strip::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: -40px;
+    width: 250px; height: 250px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.04);
+  }
+  .booking-strip h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--white);
+    font-weight: 300;
+    margin-bottom: .8rem;
+  }
+  .booking-strip p { color: rgba(255,255,255,.8); font-size: 1rem; margin-bottom: 2rem; }
+  .booking-strip .btn-white {
+    background: var(--white);
+    color: var(--rose);
+    padding: 1rem 2.8rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: .88rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    transition: all .3s;
+    display: inline-block;
+  }
+  .booking-strip .btn-white:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(0,0,0,.2); }
+
+  /* ── FOOTER ─────────────────────── */
+  footer {
+    background: var(--dark);
+    color: rgba(255,255,255,.7);
+    padding: 4rem 4rem 2rem;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+  }
+  .footer-brand {}
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: .8rem;
+  }
+  .footer-logo span { color: var(--rose); }
+  .footer-desc { font-size: .82rem; line-height: 1.8; color: rgba(255,255,255,.5); max-width: 240px; margin-bottom: 1.5rem; }
+  .footer-social { display: flex; gap: .8rem; }
+  .footer-social a {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.08);
+    display: flex; align-items: center; justify-content: center;
+    text-decoration: none;
+    transition: all .3s;
+    font-size: .85rem;
+  }
+  .footer-social a:hover { background: var(--rose); transform: translateY(-2px); }
+  .footer-col h4 {
+    font-size: .78rem;
+    font-weight: 600;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--rose-light);
+    margin-bottom: 1.2rem;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: .6rem; }
+  .footer-col ul li a {
+    text-decoration: none;
+    color: rgba(255,255,255,.55);
+    font-size: .84rem;
+    transition: color .2s;
+  }
+  .footer-col ul li a:hover { color: var(--rose-light); }
+  .footer-hours { font-size: .84rem; }
+  .footer-hours p { margin-bottom: .4rem; }
+  .footer-hours strong { color: var(--white); }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,.08);
+    padding-top: 1.8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: .75rem;
+    color: rgba(255,255,255,.35);
+  }
+  .footer-bottom a { color: var(--rose-light); text-decoration: none; }
+
+  /* ── ANIMATIONS ─────────────────── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity .7s ease, transform .7s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── MOBILE NAV OPEN ────────────── */
+  .mobile-menu {
+    display: none;
+    position: fixed; top: 70px; left: 0; right: 0;
+    background: rgba(253,246,240,.97);
+    backdrop-filter: blur(12px);
+    padding: 2rem;
+    z-index: 99;
+    flex-direction: column;
+    gap: 1.4rem;
+    border-bottom: 1px solid rgba(201,133,106,.2);
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a {
+    text-decoration: none;
+    color: var(--text);
+    font-size: .9rem;
+    font-weight: 500;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    padding-bottom: .4rem;
+    border-bottom: 1px solid rgba(201,133,106,.1);
+  }
+
+  /* ── RESPONSIVE ─────────────────── */
+  @media (max-width: 1024px) {
+    nav { padding: 1.2rem 2rem; }
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    section { padding: 5rem 2rem; }
+    .hero { grid-template-columns: 1fr; padding-top: 80px; }
+    .hero-left { padding: 4rem 2rem 2rem; }
+    .hero-right { height: 50vw; }
+    #about { grid-template-columns: 1fr; }
+    #contact { grid-template-columns: 1fr; }
+    .testimonials-grid { grid-template-columns: 1fr 1fr; }
+    .why-grid { grid-template-columns: 1fr 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .gallery-mosaic { grid-template-columns: 1fr 1fr; grid-template-rows: repeat(3, 200px); }
+  }
+  @media (max-width: 640px) {
+    .hero-img-grid { grid-template-columns: 1fr 1fr; }
+    .services-grid { grid-template-columns: 1fr 1fr; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .why-grid { grid-template-columns: 1fr 1fr; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .gallery-mosaic { grid-template-columns: 1fr 1fr; grid-template-rows: repeat(4, 150px); }
+    .gallery-mosaic .wide, .gallery-mosaic .tall { grid-column: auto; grid-row: auto; }
+    .booking-strip { padding: 3rem 1.5rem; }
+    .hero-stats { gap: 1.5rem; }
+    .about-badge-float { width: 80px; height: 80px; }
+    footer { padding: 3rem 1.5rem 1.5rem; }
+    .footer-bottom { flex-direction: column; text-align: center; }
+    #contact, #about { padding: 4rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">New Look <span>Salon</span></a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="tel:+917892365783" class="nav-cta">Book Now</a></li>
+  </ul>
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#services" onclick="toggleMenu()">Services</a>
+  <a href="#about" onclick="toggleMenu()">About</a>
+  <a href="#gallery" onclick="toggleMenu()">Gallery</a>
+  <a href="#testimonials" onclick="toggleMenu()">Reviews</a>
+  <a href="#contact" onclick="toggleMenu()">Contact</a>
+  <a href="tel:+917892365783" style="color:var(--rose);font-weight:700;" onclick="toggleMenu()">📞 Book Now</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-left">
+    <div class="hero-badge">Ladies Only · Est. in Ejipura</div>
+    <h1>
+      <strong>Beauty, Care</strong><br>
+      &amp; <em>Confidence</em><br>
+      All in One Place
+    </h1>
+    <p>Professional ladies salon in Ejipura, Bengaluru offering expert hair, skin, and beauty services with personalized care at affordable prices.</p>
+    <div class="hero-actions">
+      <a href="tel:+917892365783" class="btn-primary">📞 Book Appointment</a>
+      <a href="#services" class="btn-outline">Explore Services</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">4.7★</div>
+        <div class="stat-label">Google Rating</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">212+</div>
+        <div class="stat-label">Happy Reviews</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">5+</div>
+        <div class="stat-label">Years Trusted</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-img-grid">
+      <img class="img-main" src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80" alt="Salon hair treatment" loading="lazy"/>
+      <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=400&q=80" alt="Woman hair styling" loading="lazy"/>
+      <img src="https://images.unsplash.com/photo-1487412912498-0447578fcca8?w=400&q=80" alt="Bridal makeup" loading="lazy"/>
+    </div>
+    <div class="hero-overlay">
+      <div>
+        <div class="stars">★★★★★</div>
+        <div class="ov-text">4.7 / 5 Rating</div>
+        <div class="ov-sub">212 Google Reviews</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span>Hair Smoothing</span><span>Keratin Treatment</span><span>Hair Spa</span><span>Hair Coloring</span><span>Facials</span><span>Waxing</span><span>Threading</span><span>Bridal Makeup</span><span>Manicure &amp; Pedicure</span><span>Clean-up</span>
+    <span>Hair Smoothing</span><span>Keratin Treatment</span><span>Hair Spa</span><span>Hair Coloring</span><span>Facials</span><span>Waxing</span><span>Threading</span><span>Bridal Makeup</span><span>Manicure &amp; Pedicure</span><span>Clean-up</span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="services-header reveal">
+    <div>
+      <span class="section-label">What We Offer</span>
+      <h2 class="section-title">Love the Way You <em>Look &amp; Feel</em></h2>
+    </div>
+    <a href="tel:+917892365783" class="btn-primary">Book a Service</a>
+  </div>
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <div class="service-card-img">
+        <span class="service-tag">Popular</span>
+        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=400&q=80" alt="Hair Smoothing"/>
+      </div>
+      <div class="service-card-body">
+        <h3>Hair Smoothing</h3>
+        <p>Silky, frizz-free hair that lasts for months with professional smoothing treatments.</p>
+      </div>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-card-img">
+        <img src="https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?w=400&q=80" alt="Keratin Treatment"/>
+      </div>
+      <div class="service-card-body">
+        <h3>Keratin Treatment</h3>
+        <p>Deep conditioning and smoothing for stronger, healthier, and manageable hair.</p>
+      </div>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-card-img">
+        <img src="https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?w=400&q=80" alt="Hair Spa"/>
+      </div>
+      <div class="service-card-body">
+        <h3>Hair Spa</h3>
+        <p>Nourishing spa treatments that revive dull, damaged hair with deep moisture.</p>
+      </div>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-card-img">
+        <span class="service-tag">Trending</span>
+        <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=400&q=80" alt="Hair Coloring"/>
+      </div>
+      <div class="service-card-body">
+        <h3>Hair Coloring</h3>
+        <p>Vibrant, natural or bold tones — our colorists bring your vision to life beautifully.</p>
+      </div>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-card-img">
+        <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=400&q=80" alt="Facial"/>
+      </div>
+      <div class="service-card-body">
+        <h3>Facial &amp; Clean-up</h3>
+        <p>Glowing skin treatments tailored to your skin type for a refreshed, radiant complexion.</p>
+      </div>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-card-img">
+        <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=400&q=80" alt="Waxing"/>
+      </div>
+      <div class="service-card-body">
+        <h3>Waxing &amp; Threading</h3>
+        <p>Smooth skin and perfectly shaped brows for a flawless, clean finish every time.</p>
+      </div>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-card-img">
+        <span class="service-tag">Special</span>
+        <img src="https://images.unsplash.com/photo-1457972729786-0411a3b2b626?w=400&q=80" alt="Bridal Makeup"/>
+      </div>
+      <div class="service-card-body">
+        <h3>Bridal Makeup</h3>
+        <p>Look stunning on your most special day with our expert bridal makeup and styling.</p>
+      </div>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-card-img">
+        <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=400&q=80" alt="Manicure Pedicure"/>
+      </div>
+      <div class="service-card-body">
+        <h3>Manicure &amp; Pedicure</h3>
+        <p>Pamper your hands and feet with our relaxing nail care and grooming services.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-imgs reveal">
+    <img class="about-img-main" src="https://images.unsplash.com/photo-1561557944-6e7860d1a7eb?w=600&q=80" alt="Salon interior"/>
+    <img class="about-img-accent" src="https://images.unsplash.com/photo-1562322140-8baeececf3df?w=400&q=80" alt="Happy salon customer"/>
+    <div class="about-badge-float">
+      <div class="num">4.7</div>
+      <div class="txt">Star Rating</div>
+    </div>
+  </div>
+  <div class="about-content reveal">
+    <span class="section-label">About New Look Salon</span>
+    <h2 class="section-title">Your Trusted Beauty <em>Destination</em> in Ejipura</h2>
+    <p>New Look Salon is a ladies-only beauty salon nestled in the heart of Ejipura, Bengaluru. For years, we've been the go-to destination for women who want professional beauty and hair care services delivered with warmth, hygiene, and expertise.</p>
+    <p>From hair smoothing to bridal makeovers, our experienced team of stylists and beauty therapists are dedicated to making you look and feel your absolute best — all at prices that won't break your budget.</p>
+    <div class="about-features">
+      <div class="feature-item">Ladies Only Space</div>
+      <div class="feature-item">Experienced Staff</div>
+      <div class="feature-item">Affordable Pricing</div>
+      <div class="feature-item">Hygienic Environment</div>
+      <div class="feature-item">Quality Products</div>
+      <div class="feature-item">5+ Years Trusted</div>
+      <div class="feature-item">Personalized Care</div>
+      <div class="feature-item">Open Daily till 9 PM</div>
+    </div>
+    <a href="tel:+917892365783" class="btn-primary">Visit Us Today</a>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" style="background:var(--white)">
+  <div class="gallery-header reveal">
+    <span class="section-label">Our Gallery</span>
+    <h2 class="section-title">Transformations We <em>Love</em></h2>
+    <p class="section-sub">Every visit is a new beginning. Explore the beautiful results our clients enjoy at New Look Salon.</p>
+  </div>
+  <div class="gallery-mosaic reveal">
+    <div class="g-item wide">
+      <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&q=80" alt="Hair styling result"/>
+    </div>
+    <div class="g-item">
+      <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=500&q=80" alt="Haircut"/>
+    </div>
+    <div class="g-item">
+      <img src="https://images.unsplash.com/photo-1512207736890-6ffed8a84e8d?w=500&q=80" alt="Facial"/>
+    </div>
+    <div class="g-item tall">
+      <img src="https://images.unsplash.com/photo-1487412912498-0447578fcca8?w=500&q=80" alt="Bridal makeup"/>
+    </div>
+    <div class="g-item">
+      <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=500&q=80" alt="Hair coloring"/>
+    </div>
+    <div class="g-item">
+      <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=500&q=80" alt="Manicure"/>
+    </div>
+    <div class="g-item">
+      <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?w=500&q=80" alt="Happy client"/>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div style="text-align:center" class="reveal">
+    <span class="section-label">Client Love</span>
+    <h2 class="section-title" style="color:var(--white)">What Our <em style="color:var(--rose-light)">Ladies</em> Say</h2>
+    <p style="color:rgba(255,255,255,.6);font-size:.95rem;margin-top:.8rem;">4.7 stars · 212 reviews on Google</p>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card reveal">
+      <div class="tc-stars">★★★★★</div>
+      <p class="tc-text">"The staff are really friendly and provide good service at affordable prices. I always leave feeling confident and beautiful."</p>
+      <div class="tc-author">— Happy Customer</div>
+    </div>
+    <div class="testimonial-card reveal">
+      <div class="tc-stars">★★★★★</div>
+      <p class="tc-text">"One of my go-to places for threading, facial and waxing. Clean, professional and the results are always amazing!"</p>
+      <div class="tc-author">— Regular Client</div>
+    </div>
+    <div class="testimonial-card reveal">
+      <div class="tc-stars">★★★★★</div>
+      <p class="tc-text">"Very happy with my hair smoothing. The service was professional and the result is amazing. Highly recommend!"</p>
+      <div class="tc-author">— Satisfied Client</div>
+    </div>
+    <div class="testimonial-card reveal">
+      <div class="tc-stars">★★★★★</div>
+      <p class="tc-text">"I have been visiting this salon for more than 5 years. Excellent services, hygiene and friendly staff. Best in Ejipura!"</p>
+      <div class="tc-author">— Loyal Customer, 5+ Years</div>
+    </div>
+    <div class="testimonial-card reveal">
+      <div class="tc-stars">★★★★★</div>
+      <p class="tc-text">"They offer the best services at a very competitive price range. Best parlour for women in Bengaluru!"</p>
+      <div class="tc-author">— Valued Client</div>
+    </div>
+    <div class="testimonial-card reveal">
+      <div class="tc-stars">★★★★★</div>
+      <p class="tc-text">"The ladies-only atmosphere makes it so comfortable and relaxed. Perfect for treating yourself to some self-care!"</p>
+      <div class="tc-author">— Happy Visitor</div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="why">
+  <div style="text-align:center" class="reveal">
+    <span class="section-label">Why Choose Us</span>
+    <h2 class="section-title">The <em>New Look</em> Difference</h2>
+    <p class="section-sub" style="margin:auto">Everything you need for a perfect beauty experience, all under one roof in the heart of Ejipura.</p>
+  </div>
+  <div class="why-grid">
+    <div class="why-card reveal">
+      <span class="why-icon">👩‍🎨</span>
+      <h3>Expert Stylists</h3>
+      <p>Our experienced team of beauty professionals are trained in the latest techniques and trends.</p>
+    </div>
+    <div class="why-card reveal">
+      <span class="why-icon">✨</span>
+      <h3>Premium Products</h3>
+      <p>We use only quality, professional-grade products that are gentle on your hair and skin.</p>
+    </div>
+    <div class="why-card reveal">
+      <span class="why-icon">🌸</span>
+      <h3>Ladies Only Space</h3>
+      <p>A safe, comfortable, and welcoming environment exclusively for women to relax and unwind.</p>
+    </div>
+    <div class="why-card reveal">
+      <span class="why-icon">💝</span>
+      <h3>Affordable Pricing</h3>
+      <p>Premium salon experience at prices that are easy on the wallet — beauty for everyone.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL MEDIA -->
+<section id="social">
+  <div class="reveal">
+    <span class="section-label">Connect With Us</span>
+    <h2 class="section-title">Follow Us &amp; <em>Stay Beautiful</em></h2>
+    <p class="section-sub" style="margin:auto">Stay updated with our latest looks, offers, and beauty tips. Book an appointment or reach us anytime.</p>
+  </div>
+  <div class="social-links reveal">
+    <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="social-btn instagram">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      Instagram
+    </a>
+    <a href="https://wa.me/917892365783?text=Hi!%20I%20would%20like%20to%20book%20an%20appointment%20at%20New%20Look%20Salon." target="_blank" rel="noopener" class="social-btn whatsapp">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp
+    </a>
+    <a href="https://maps.google.com/?q=New+Look+Salon+27th+Cross+Road+VGS+Layout+Ejipura+Bengaluru" target="_blank" rel="noopener" class="social-btn maps">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C7.802 0 4 3.403 4 7.602 4 11.8 7.469 16.812 12 24c4.531-7.188 8-12.2 8-16.398C20 3.403 16.199 0 12 0zm0 11c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z"/></svg>
+      Google Maps
+    </a>
+    <a href="tel:+917892365783" class="social-btn phone">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+      Call Now
+    </a>
+  </div>
+</section>
+
+<!-- BOOKING STRIP -->
+<div class="booking-strip">
+  <h2>Ready for Your New Look?</h2>
+  <p>Call us to book your appointment — open daily until 9:00 PM</p>
+  <a href="tel:+917892365783" class="btn-white">📞 +91 78923 65783</a>
+</div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-info reveal">
+    <span class="section-label">Find Us</span>
+    <h2 class="section-title">Visit New Look <em>Salon</em></h2>
+    <p>We're conveniently located in VGS Layout, Ejipura, Bengaluru. Walk in or call ahead — we'd love to see you!</p>
+
+    <div class="contact-detail">
+      <div class="contact-icon">📍</div>
+      <div class="contact-detail-text">
+        <strong>Address</strong>
+        <span>27th Cross Road, VGS Layout, Ejipura, Bengaluru, Karnataka 560047</span>
+      </div>
+    </div>
+    <div class="contact-detail">
+      <div class="contact-icon">📞</div>
+      <div class="contact-detail-text">
+        <strong>Phone</strong>
+        <span><a href="tel:+917892365783" style="color:var(--rose);text-decoration:none;font-weight:600">+91 78923 65783</a></span>
+      </div>
+    </div>
+    <div class="contact-detail">
+      <div class="contact-icon">🕐</div>
+      <div class="contact-detail-text">
+        <strong>Hours</strong>
+        <span>Open Daily — Closes at 9:00 PM</span>
+      </div>
+    </div>
+    <div class="contact-detail">
+      <div class="contact-icon">💳</div>
+      <div class="contact-detail-text">
+        <strong>Payment</strong>
+        <span>Debit Cards · UPI · NFC Mobile Payments</span>
+      </div>
+    </div>
+    <div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap">
+      <a href="tel:+917892365783" class="btn-primary">Call Us Now</a>
+      <a href="https://wa.me/917892365783?text=Hi!%20I%20would%20like%20to%20book%20an%20appointment." target="_blank" class="btn-outline">WhatsApp Us</a>
+    </div>
+  </div>
+  <div class="contact-map reveal">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.256763563!2d77.62!3d12.934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae14a9cf5b11d9%3A0x9eb8c1d4b8dbf3a!2sEjipura%2C%20Bengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1234567890"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="New Look Salon Location"></iframe>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo">New Look <span>Salon</span></div>
+      <p class="footer-desc">A trusted ladies-only beauty salon in Ejipura, Bengaluru. Professional care, affordable prices, and a space just for you.</p>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener" title="Instagram">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="https://wa.me/917892365783" target="_blank" rel="noopener" title="WhatsApp">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
+        <a href="https://maps.google.com/?q=New+Look+Salon+Ejipura+Bengaluru" target="_blank" rel="noopener" title="Google Maps">📍</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#services">Hair Smoothing</a></li>
+        <li><a href="#services">Keratin Treatment</a></li>
+        <li><a href="#services">Hair Spa</a></li>
+        <li><a href="#services">Hair Coloring</a></li>
+        <li><a href="#services">Facials</a></li>
+        <li><a href="#services">Waxing &amp; Threading</a></li>
+        <li><a href="#services">Bridal Makeup</a></li>
+        <li><a href="#services">Manicure &amp; Pedicure</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Visit Us</h4>
+      <div class="footer-hours">
+        <p><strong>Address</strong></p>
+        <p style="margin-bottom:1rem;color:rgba(255,255,255,.5);font-size:.82rem;">27th Cross Road, VGS Layout, Ejipura, Bengaluru – 560047</p>
+        <p><strong>Hours</strong></p>
+        <p style="color:rgba(255,255,255,.5);font-size:.82rem;">Open Daily · Closes at 9:00 PM</p>
+        <p style="margin-top:1rem"><strong>Phone</strong></p>
+        <p><a href="tel:+917892365783" style="color:var(--rose-light);text-decoration:none;font-size:.85rem;">+91 78923 65783</a></p>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 New Look Salon, Ejipura, Bengaluru. All rights reserved.</span>
+    <span>Ladies Only · Open Daily till 9 PM · <a href="tel:+917892365783">+91 78923 65783</a></span>
+  </div>
+</footer>
+
+<script>
+  // Navbar scroll effect
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 50);
+  });
+
+  // Mobile menu toggle
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+
+  // Intersection observer for reveal animations
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
